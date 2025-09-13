@@ -1,0 +1,31 @@
+# Task 3: Data Visualization
+
+plt.figure(figsize=(8,5))
+plt.plot(df.index, df['sepal length (cm)'], label="Sepal Length")
+plt.title("Line Chart: Sepal Length Trend")
+plt.xlabel("Index (pseudo-time)")
+plt.ylabel("Sepal Length (cm)")
+plt.legend()
+plt.show()
+
+plt.figure(figsize=(8,5))
+sns.barplot(x="target", y="petal length (cm)", data=df, estimator="mean")
+plt.title("Bar Chart: Average Petal Length per Species")
+plt.xlabel("Species")
+plt.ylabel("Average Petal Length (cm)")
+plt.show()
+
+plt.figure(figsize=(8,5))
+plt.hist(df['sepal width (cm)'], bins=15, color="skyblue", edgecolor="black")
+plt.title("Histogram: Sepal Width Distribution")
+plt.xlabel("Sepal Width (cm)")
+plt.ylabel("Frequency")
+plt.show()
+
+plt.figure(figsize=(8,5))
+sns.scatterplot(x="sepal length (cm)", y="petal length (cm)", hue="target", data=df, palette="deep")
+plt.title("Scatter Plot: Sepal Length vs Petal Length")
+plt.xlabel("Sepal Length (cm)")
+plt.ylabel("Petal Length (cm)")
+plt.legend(title="Species")
+plt.show()
